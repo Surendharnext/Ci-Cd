@@ -1,4 +1,4 @@
-currentBuild.displayName = "dev-#"+currentBuild
+currentBuild.displayName = "dev-#"+currentBuild.displayName
 pipeline{
     agent any 
     environment{
