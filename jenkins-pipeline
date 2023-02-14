@@ -2,17 +2,17 @@ currentBuild.displayName = "dev-#"+currentBuild.displayName
 pipeline{
     agent any 
     environment{
-        PATH="/PATH=/opt/apache-maven-3.9.0/bin:$PATH"
+        PATH="/opt/mvn/bin:$PATH"
     }
     stages{
         stage('Git Checkout'){
             steps{
-               git credentialsId: 'maven-build', url: 'https://github.com/Surendharnext/Ci-Cd'
+               git credentialsId: 'maven-build', url: 'https://github.com/Surendharnext/Ci-Cd.git'
             }
         }
         stage('mvn build'){
             steps{
-                sh "mvn --f /var/lib/jenkins/workspace/jenkins-pipeline/ clean install"
+                sh "mvn --f /var/lib/jenkins/workspace/build/ clean install"
             }
         }   
     }
