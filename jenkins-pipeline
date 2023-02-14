@@ -12,7 +12,7 @@ pipeline{
         }
         stage('mvn build'){
             steps{
-                sh "mvn clean install"
+                sh "mvn --f /var/lib/jenkins/workspace/jenkins-pipeline/ clean install"
             }
         }   
     }
